@@ -15,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class SignGenerator {
 

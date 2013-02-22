@@ -32,7 +32,7 @@ import org.getspout.spoutapi.SpoutManager;
 
 /**
  *
- * @author DDoS 
+ * @author Gemil 
  */
 public class QuickSign extends JavaPlugin {
 
@@ -78,7 +78,7 @@ public class QuickSign extends JavaPlugin {
 
         startMetrics();
         
-        log.info("[QuickSign] Plugin enabled. v" + getDescription().getVersion() + ", by DDoS");
+        log.info("[QuickSignReloaded] Plugin enabled. v" + getDescription().getVersion() + ", by Gemil");
 
     }
 
@@ -86,7 +86,7 @@ public class QuickSign extends JavaPlugin {
     public void onDisable() {
 
         sessions.clear();
-        log.info("[QuickSign] Plugin disabled. v" + getDescription().getVersion() + ", by DDoS");
+        log.info("[QuickSignReloaded] Plugin disabled. v" + getDescription().getVersion() + ", by Gemil");
 
     }
 
@@ -317,12 +317,12 @@ public class QuickSign extends JavaPlugin {
 
         if (plugin != null && plugin instanceof WorldGuardPlugin) {
 
-            log.info("[QuickSign] WorldGuard detected. Features enabled.");
+            log.info("[QuickSignReloaded] WorldGuard detected. Features enabled.");
             selectionHandler.setWG((WorldGuardPlugin) plugin);
 
         } else {
 
-            log.info("[QuickSign] No WorldGuard detected. Features disabled.");
+            log.info("[QuickSignReloaded] No WorldGuard detected. Features disabled.");
 
         }
     }
@@ -334,12 +334,12 @@ public class QuickSign extends JavaPlugin {
 
         if (plugin != null) {
 
-            log.info("[QuickSign] Residence detected. Features enabled.");
+            log.info("[QuickSignReloaded] Residence detected. Features enabled.");
             selectionHandler.setResidence(true);
 
         } else {
 
-            log.info("[QuickSign] No Residence detected. Features disabled.");
+            log.info("[QuickSignReloaded] No Residence detected. Features disabled.");
 
         }
     }
@@ -351,12 +351,12 @@ public class QuickSign extends JavaPlugin {
 
         if (plugin != null) {
 
-            log.info("[QuickSign] ChestShop detected. Features enabled.");
+            log.info("[QuickSignReloaded] ChestShop detected. Features enabled.");
             selectionHandler.setChestShop(true);
 
         } else {
 
-            log.info("[QuickSign] No ChestShop detected. Features disabled.");
+            log.info("[QuickSignReloaded] No ChestShop detected. Features disabled.");
 
         }
     }
@@ -368,12 +368,12 @@ public class QuickSign extends JavaPlugin {
 
         if (plugin != null) {
 
-            log.info("[QuickSign] Regios detected. Features enabled.");
+            log.info("[QuickSignReloaded] Regios detected. Features enabled.");
             selectionHandler.setRegiosAPI(new RegiosAPI());
 
         } else {
 
-            log.info("[QuickSign] No Regios detected. Features disabled.");
+            log.info("[QuickSignReloaded] No Regios detected. Features disabled.");
 
         }
     }
@@ -385,12 +385,12 @@ public class QuickSign extends JavaPlugin {
 
         if (plugin != null && plugin instanceof LWCPlugin) {
 
-            log.info("[QuickSign] LWC detected. Features enabled.");
+            log.info("[QuickSignReloaded] LWC detected. Features enabled.");
             selectionHandler.setLWC(((LWCPlugin) plugin).getLWC());
 
         } else {
 
-            log.info("[QuickSign] No LWC detected. Features disabled.");
+            log.info("[QuickSignReloaded] No LWC detected. Features disabled.");
 
         }
     }
@@ -402,13 +402,13 @@ public class QuickSign extends JavaPlugin {
 
         if (plugin != null && plugin instanceof LogBlock) {
 
-            log.info("[QuickSign] LogBlock detected. Features enabled.");
+            log.info("[QuickSignReloaded] LogBlock detected. Features enabled.");
             consumer = ((LogBlock) plugin).getConsumer();
             return;
 
         } else {
 
-            log.info("[QuickSign] No LogBlock detected. Features disabled.");
+            log.info("[QuickSignReloaded] No LogBlock detected. Features disabled.");
 
         }
     }
@@ -420,13 +420,13 @@ public class QuickSign extends JavaPlugin {
 
         if (plugin != null) {
 
-            log.info("[QuickSign] Spout detected. Features enabled.");
+            log.info("[QuickSignReloaded] Spout detected. Features enabled.");
             spoutOn = true;
             return true;
 
         } else {
 
-            log.info("[QuickSign] No Spout detected. Features disabled.");
+            log.info("[QuickSignReloaded] No Spout detected. Features disabled.");
             spoutOn = false;
             return false;
 

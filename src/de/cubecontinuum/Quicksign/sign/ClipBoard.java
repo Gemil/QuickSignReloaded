@@ -2,7 +2,7 @@ package de.cubecontinuum.Quicksign.sign;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class ClipBoard {
 

@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public abstract class QSCommand {
 
@@ -18,7 +18,7 @@ public abstract class QSCommand {
     public QSCommand(QuickSign plugin, List<Sign> signs) {
 
         this.plugin = plugin;
-        this.signs = new ArrayList(signs);
+        this.signs = new ArrayList<Sign>(signs);
 
     }
 

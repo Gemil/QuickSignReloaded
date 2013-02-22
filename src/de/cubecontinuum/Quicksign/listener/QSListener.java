@@ -27,9 +27,8 @@ import org.bukkit.inventory.ItemStack;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
-@SuppressWarnings("unchecked")
 public class QSListener implements Listener {
 
     private final QuickSign plugin;

@@ -4,7 +4,7 @@ import org.bukkit.entity.Player;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public interface Permissions {
     

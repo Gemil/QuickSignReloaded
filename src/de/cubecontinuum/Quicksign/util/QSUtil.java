@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class QSUtil {
 
@@ -76,7 +76,7 @@ public class QSUtil {
 
 	public static void tell(Player player, String string) {
 
-		player.sendMessage(ChatColor.BLUE + "[QuickSign]" + ChatColor.GRAY + " " + string);
+		player.sendMessage(ChatColor.BLUE + "[QuickSignReloaded]" + ChatColor.GRAY + " " + string);
 
 	}
 

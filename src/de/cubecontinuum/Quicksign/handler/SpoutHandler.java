@@ -21,7 +21,7 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class SpoutHandler {
 

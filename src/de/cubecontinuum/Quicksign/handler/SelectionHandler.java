@@ -39,9 +39,8 @@ import org.bukkit.block.Block;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
-@SuppressWarnings("unchecked")
 public class SelectionHandler {
 
     private final QuickSign plugin;

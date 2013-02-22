@@ -9,7 +9,7 @@ import org.bukkit.plugin.Plugin;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class PermissionsHandler {
 

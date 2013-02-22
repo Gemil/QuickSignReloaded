@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class ColorClearCommand extends QSCommand {
 

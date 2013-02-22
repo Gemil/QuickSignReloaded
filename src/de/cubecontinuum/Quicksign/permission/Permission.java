@@ -2,7 +2,7 @@ package de.cubecontinuum.Quicksign.permission;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public enum Permission {
 

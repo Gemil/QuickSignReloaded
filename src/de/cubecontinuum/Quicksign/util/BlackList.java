@@ -14,7 +14,7 @@ import org.bukkit.entity.Player;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class BlackList {
 
@@ -25,7 +25,7 @@ public class BlackList {
 
         this.plugin = plugin;
 
-        YamlConfiguration config = YamlConfiguration.loadConfiguration(new File("plugins/QuickSign/black_list.yml"));
+        YamlConfiguration config = YamlConfiguration.loadConfiguration(new File("plugins/QuickSignReloaded/black_list.yml"));
 
         if (config.getKeys(true).isEmpty()) {
 
@@ -33,11 +33,11 @@ public class BlackList {
 
             try {
 
-                config.save("plugins/QuickSign/black_list.yml");
+                config.save("plugins/QuickSignReloaded/black_list.yml");
 
             } catch (IOException ex) {
 
-                QuickSign.log.info("[QuickSign] Couldn't save black list: " + ex.getMessage());
+                QuickSign.log.info("[QuickSignReloaded] Couldn't save black list: " + ex.getMessage());
                 return;
 
             }
@@ -54,7 +54,7 @@ public class BlackList {
             }
         }
 
-        QuickSign.log.info("[QuickSign] Black list loaded");
+        QuickSign.log.info("[QuickSignReloaded] Black list loaded");
 
     }
 

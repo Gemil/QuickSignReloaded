@@ -10,7 +10,7 @@ import org.bukkit.event.block.Action;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class QSConfig {
 
@@ -40,7 +40,7 @@ public class QSConfig {
 
     public void setupConfig(QuickSign plugin) {
 
-        File configDir = new File("plugins/QuickSign");
+        File configDir = new File("plugins/QuickSignReloaded");
 
         if (!configDir.exists()) {
 
@@ -48,7 +48,7 @@ public class QSConfig {
 
         }
 
-        File configFile = new File("plugins/QuickSign/config.yml");
+        File configFile = new File("plugins/QuickSignReloaded/config.yml");
 
         if (!configFile.exists()) {
 
@@ -58,7 +58,7 @@ public class QSConfig {
 
             } catch (Exception e) {
 
-                QuickSign.log.info("[QuickSign] Error when creating config file.");
+                QuickSign.log.info("[QuickSignReloaded] Error when creating config file.");
 
             }
         }
@@ -77,7 +77,7 @@ public class QSConfig {
             
         }
         
-        QuickSign.log.info("[QuickSign] Configuration loaded.");
+        QuickSign.log.info("[QuickSignReloaded] Configuration loaded.");
         
     }
 
@@ -85,12 +85,12 @@ public class QSConfig {
 
         try {
 
-            config.load("plugins/QuickSign/config.yml");
+            config.load("plugins/QuickSignReloaded/config.yml");
             return true;
 
         } catch (Exception ex) {
 
-            QuickSign.log.info("[QuickSign] Couldn't load config: " + ex.getMessage());
+            QuickSign.log.info("[QuickSignReloaded] Couldn't load config: " + ex.getMessage());
             return false;
 
         }
@@ -119,15 +119,15 @@ public class QSConfig {
         if (!keys.contains("useResidence")) {
             config.set("useResidence", false);
         }
-
+/*
         if (!keys.contains("useRegios")) {
             config.set("useRegios", false);
         }
-        
+  */      
         if (!keys.contains("useLWC")) {
             config.set("useLWC", false);
         }
-        
+ /*       
         if (!keys.contains("useLogBock")) {
             config.set("useLogBock", true);
         }
@@ -135,7 +135,7 @@ public class QSConfig {
         if (!keys.contains("useChestShop")) {
             config.set("useChestShop", true);
         }
-
+*/
         if (!keys.contains("useSpout")) {
             config.set("useSpout", true);
         }
@@ -154,11 +154,11 @@ public class QSConfig {
         
         try {
         
-            config.save("plugins/QuickSign/config.yml");
+            config.save("plugins/QuickSignReloaded/config.yml");
         
         } catch (IOException ex) {
 
-            QuickSign.log.info("[QuickSign] Couldn't save config: " + ex.getMessage());
+            QuickSign.log.info("[QuickSignReloaded] Couldn't save config: " + ex.getMessage());
 
         }
     }
@@ -197,7 +197,7 @@ public class QSConfig {
         colorDyes = false;
         chatSigns = true;
         
-        QuickSign.log.info("[QuickSign] Loaded defaults.");
+        QuickSign.log.info("[QuickSignReloaded] Loaded defaults.");
         
     }
     
@@ -241,14 +241,14 @@ public class QSConfig {
         if (!useWG) {
 
             plugin.getSelectionHandler().setWG(null);
-            QuickSign.log.info("[QuickSign] WorldGuard support disabled by config.");
+            QuickSign.log.info("[QuickSignReloaded] WorldGuard support disabled by config.");
 
         }
 
         if (!useRes) {
 
             plugin.getSelectionHandler().setResidence(false);
-            QuickSign.log.info("[QuickSign] Residence support disabled by config.");
+            QuickSign.log.info("[QuickSignReloaded] Residence support disabled by config.");
 
         }
 /*
@@ -262,7 +262,7 @@ public class QSConfig {
         if (!useLWC) {
 
             plugin.getSelectionHandler().setLWC(null);
-            QuickSign.log.info("[QuickSign] LWC support disabled by config.");
+            QuickSign.log.info("[QuickSignReloaded] LWC support disabled by config.");
 
         }
 /*
@@ -283,7 +283,7 @@ public class QSConfig {
         if (!useSpout) {
 
             plugin.setSpoutOn(false);
-            QuickSign.log.info("[QuickSign] Spout support disabled by config.");
+            QuickSign.log.info("[QuickSignReloaded] Spout support disabled by config.");
 
         }
     }

@@ -4,7 +4,7 @@ import org.bukkit.block.Sign;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class SignState {
     

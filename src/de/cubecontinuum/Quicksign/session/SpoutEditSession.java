@@ -10,7 +10,7 @@ import org.getspout.spoutapi.gui.PopupScreen;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class SpoutEditSession extends EditSession {
 

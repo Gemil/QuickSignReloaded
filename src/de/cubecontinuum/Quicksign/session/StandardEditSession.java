@@ -13,7 +13,7 @@ import org.bukkit.entity.Player;
 
 /**
  *
- * @author DDoS
+ * @author Gemil
  */
 public class StandardEditSession extends EditSession {
 
