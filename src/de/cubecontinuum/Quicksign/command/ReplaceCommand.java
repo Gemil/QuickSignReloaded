@@ -1,0 +1,141 @@
+package de.cubecontinuum.Quicksign.command;
+
+import java.util.List;
+import de.cubecontinuum.Quicksign.QuickSign;
+import de.cubecontinuum.Quicksign.util.QSUtil;
+import org.bukkit.ChatColor;
+import org.bukkit.block.Sign;
+import org.bukkit.entity.Player;
+
+/**
+ *
+ * @author DDoS
+ */
+public class ReplaceCommand extends QSCommand {
+
+    private final int line;
+    private final String text1;
+    private String text2;
+    private final boolean colors;
+    private final String[] backups;
+
+    public ReplaceCommand(QuickSign plugin, List<Sign> signs, int line, String text1, String text2, boolean colors) {
+
+        super (plugin, signs);
+        this.line = line;
+        this.text1 = text1;
+        this.text2 = text2;
+        this.colors = colors;
+        backups = new String[signs.size()];
+
+    }
+
+    @Override
+    public boolean run(Player player) {
+
+        if (!plugin.getBlackList().allows(text2, player)) {
+            
+            QSUtil.tell(player, "You are not allowed to place the provided text.");
+            return false;
+            
+        }
+        
+        if (line < 0 || line > 3) {
+
+            QSUtil.tell(player, "Invalid line.");
+            return false;
+
+        }
+
+        if (text2.length() > 15) {
+
+            QSUtil.tell(player, "The provided text is longer than 15 characters. It will be truncated.");
+            text2 = text2.substring(0, 16);
+
+        }
+
+        if (!colors) {
+
+            QSUtil.tell(player, "You don't have permission for colors. They will not be applied.");
+            text2 = QSUtil.stripColors(text2);
+
+        } else {
+        
+            text2 = ChatColor.translateAlternateColorCodes('&', text2);
+
+        }
+        
+        int i = 0;
+        boolean someSignsIgnored = false;
+        
+        for (Sign sign : signs) {
+            
+            backups[i] = sign.getLine(line);
+            String finalLine = sign.getLine(line).replaceAll("\\Q" + text1 + "\\E", text2);
+            
+            if (!plugin.getBlackList().allows(finalLine, player)) {
+                
+                someSignsIgnored = true;
+                continue;
+                
+            }
+            
+            sign.setLine(line, finalLine);
+            sign.update();
+            logChange(player, sign);
+            i++;
+
+        }
+        
+        if (someSignsIgnored) {
+            
+            QSUtil.tell(player, "Some signs we're not edited: the final text is blacklisted.");
+            
+        }
+
+        QSUtil.tell(player, "Edit successful.");
+        return true;
+
+    }
+
+    @Override
+    public void undo(Player player) {
+
+        int i = 0;
+
+        for (Sign sign : signs) {
+            
+            sign.setLine(line, backups[i]);
+            sign.update();
+            logChange(player, sign);
+            i++;
+
+        }
+
+        QSUtil.tell(player, "Undo successful.");
+
+    }
+
+    @Override
+    public void redo(Player player) {
+
+        for (Sign sign : signs) {
+            
+            String finalLine = sign.getLine(line).replaceAll("\\Q" + text1 + "\\E", text2);
+            
+            if (!plugin.getBlackList().allows(finalLine, player)) {
+                
+                continue;
+                
+            }
+            
+            sign.setLine(line, finalLine);
+            sign.update();
+            logChange(player, sign);
+
+        }
+
+        QSUtil.tell(player, "Redo successful.");
+
+    }
+}
