@@ -18,5 +18,6 @@
 	<classpathentry kind="lib" path="ressources/WorldGuard.jar"/>
 	<classpathentry kind="lib" path="ressources/ChestShop.jar"/>
 	<classpathentry kind="lib" path="ressources/Residence.jar"/>
+	<classpathentry kind="lib" path="ressources/LogBlock.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

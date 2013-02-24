@@ -107,13 +107,13 @@ public class SignGenerator {
         BlockState state = signLocBlock.getState();
         state.update();
         Sign sign = (Sign) state;
-        /*
+        
         if (plugin.getConsumer() != null) {
 
             plugin.getConsumer().queueSignPlace(player.getName(), sign);
 
         }
-		*/
+		
         String[] splitTxt = lines.split("&/");
         int i2 = 4;
 

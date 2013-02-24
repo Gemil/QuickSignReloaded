@@ -84,12 +84,12 @@ public class QSSpoutListener implements Listener {
                 sign.setLine(2, text2);
                 sign.setLine(3, text3);
                 sign.update();
-                /*
+                
                 if (plugin.getConsumer() != null) {
 
                     plugin.getConsumer().queueSignPlace(player.getName(), sign);
 
-                } */
+                }
             }
 
             QSUtil.tell(player, "The sign has been edited.");

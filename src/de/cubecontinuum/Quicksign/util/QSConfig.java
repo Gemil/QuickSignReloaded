@@ -31,7 +31,7 @@ public class QSConfig {
     private boolean useWG;
     private boolean useRes;
 //    private boolean useRegios;
-//    private boolean useLogBlock;
+    private boolean useLogBlock;
     private boolean useSpout;
     private boolean useLWC;
 //    private boolean useChestShop;
@@ -127,11 +127,11 @@ public class QSConfig {
         if (!keys.contains("useLWC")) {
             config.set("useLWC", false);
         }
- /*       
+        
         if (!keys.contains("useLogBock")) {
             config.set("useLogBock", true);
         }
-        
+        /*        
         if (!keys.contains("useChestShop")) {
             config.set("useChestShop", true);
         }
@@ -172,7 +172,7 @@ public class QSConfig {
         useRes = config.getBoolean("useResidence", false);
 //        useRegios = config.getBoolean("useRegios", false);
         useLWC = config.getBoolean("useLWC", false);
-//        useLogBlock = config.getBoolean("useLogBock", true);
+        useLogBlock = config.getBoolean("useLogBock", true);
 //        useChestShop = config.getBoolean("useChestShop", true);
         useSpout = config.getBoolean("useSpout", true);
         colorSignChange = config.getBoolean("colorOnPlacement", true);
@@ -190,7 +190,7 @@ public class QSConfig {
         useRes = true;
 //        useRegios = true;
         useLWC = false;
-//        useLogBlock = true;
+        useLogBlock = true;
         useSpout = true;
 //        useChestShop = true;
         colorSignChange = true;
@@ -255,7 +255,7 @@ public class QSConfig {
         if (!useRegios) {
 
             plugin.getSelectionHandler().setRegiosAPI(null);
-            QuickSign.log.info("[QuickSign] Regios support disabled by config.");
+            QuickSign.log.info("[QuickSignReloaded] Regios support disabled by config.");
 
         }
         */
@@ -265,18 +265,18 @@ public class QSConfig {
             QuickSign.log.info("[QuickSignReloaded] LWC support disabled by config.");
 
         }
-/*
+
         if (!useLogBlock) {
 
             plugin.setConsumer(null);
-            QuickSign.log.info("[QuickSign] LogBlock support disabled by config.");
+            QuickSign.log.info("[QuickSignReloaded] LogBlock support disabled by config.");
 
         }
-
+        /*
         if (!useChestShop) {
 
             plugin.getSelectionHandler().setChestShop(false);
-            QuickSign.log.info("[QuickSign] ChestShop support disabled by config.");
+            QuickSign.log.info("[QuickSignReloaded] ChestShop support disabled by config.");
 
         }
         */

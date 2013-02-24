@@ -234,12 +234,12 @@ public class QSListener implements Listener {
 
         sign.update();
         event.setCancelled(true);
-/*
+
         if (plugin.getConsumer() != null) {
 
             plugin.getConsumer().queueBlockPlace(player.getName(), sign);
 
-        }*/
+        }
     }
 
     private boolean chatSigns(PlayerInteractEvent event, Player player, Sign sign) {

@@ -3,8 +3,8 @@ package de.cubecontinuum.Quicksign;
 import com.griefcraft.lwc.LWCPlugin;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 //import couk.Adamki11s.Regios.API.RegiosAPI;
-//import de.diddiz.LogBlock.Consumer;
-//import de.diddiz.LogBlock.LogBlock;
+import de.diddiz.LogBlock.Consumer;
+import de.diddiz.LogBlock.LogBlock;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,7 +49,7 @@ public class QuickSign extends JavaPlugin {
     //
     private final Map<Player, EditSession> sessions = new HashMap<Player, EditSession>();
     //
-//    private Consumer consumer;
+    private Consumer consumer;
     //
     private final BlackList blackList = new BlackList(this);
 
@@ -71,7 +71,7 @@ public class QuickSign extends JavaPlugin {
         checkForResidence();
      //   checkForChestShop();
      //   checkForRegios();
-     //   checkForLogBlock();
+        checkForLogBlock();
         checkForLWC();
 
         new QSConfig().setupConfig(this);
@@ -299,7 +299,7 @@ public class QuickSign extends JavaPlugin {
 
     }
 
-/*    public Consumer getConsumer() {
+    public Consumer getConsumer() {
 
         return consumer;
 
@@ -310,7 +310,7 @@ public class QuickSign extends JavaPlugin {
         this.consumer = consumer;
 
     }
-*/
+
     private void checkForWorldGuard() {
 
         Plugin plugin = getServer().getPluginManager().getPlugin("WorldGuard");
@@ -394,7 +394,7 @@ public class QuickSign extends JavaPlugin {
 
         }
     }
-    /*
+    
     private void checkForLogBlock() {
 
         PluginManager pm = getServer().getPluginManager();
@@ -412,7 +412,7 @@ public class QuickSign extends JavaPlugin {
 
         }
     }
-*/
+
     private boolean checkForSpout() {
 
         PluginManager pm = getServer().getPluginManager();
