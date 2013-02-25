@@ -31,10 +31,10 @@ import com.bekvon.bukkit.residence.protection.ResidencePermissions;
 import com.griefcraft.lwc.LWC;
 import com.griefcraft.model.Protection;
 
-//import couk.Adamki11s.Regios.API.RegiosAPI;
-//import couk.Adamki11s.Regios.Regions.Region;
+import net.jzx7.regiosapi.RegiosAPI;
+import net.jzx7.regiosapi.regions.Region;
 
-//import com.Acrobot.ChestShop.Utils.uSign;
+import com.Acrobot.ChestShop.Signs.ChestShopSign;
 import org.bukkit.block.Block;
 
 /**
@@ -46,9 +46,9 @@ public class SelectionHandler {
     private final QuickSign plugin;
     //
     private WorldGuardPlugin wg = null;
-//    private RegiosAPI regiosAPI = null;
+    private RegiosAPI regiosAPI = null;
     private LWC lwc = null;
-//    private boolean chestShop = false;
+    private boolean chestShop = false;
     private boolean residence = false;
 
     public SelectionHandler(QuickSign instance) {
@@ -63,12 +63,12 @@ public class SelectionHandler {
 
     }
 
-/*    public void setRegiosAPI(RegiosAPI regiosAPI) {
+    public void setRegiosAPI(RegiosAPI regiosAPI) {
 
         this.regiosAPI = regiosAPI;
 
     }
-*/
+
     public void setLWC(LWC lwc) {
 
         this.lwc = lwc;
@@ -81,10 +81,10 @@ public class SelectionHandler {
 
     }
 
-/*    public void setChestShop(boolean chestShop) {
+    public void setChestShop(boolean chestShop) {
         this.chestShop = chestShop;
     }
-*/
+
     public void handleSignSelection(PlayerInteractEvent event, Sign sign, Player player) {
 
         if (!plugin.getBlackList().allows(sign, player)) {
@@ -206,7 +206,7 @@ public class SelectionHandler {
         return false;
 
     }
-/*
+
     private boolean checkForRegiosPerms(Player player, boolean forceRegion) {
 
         Region region = regiosAPI.getRegion(player);
@@ -232,7 +232,7 @@ public class SelectionHandler {
         return false;
 
     }
-*/
+
     private boolean checkForLWCPerms(Player player, Block block, boolean forceProtection) {
 
         Protection protection = lwc.findProtection(block);
@@ -259,12 +259,12 @@ public class SelectionHandler {
 
     }
 
- /*   private boolean chekForChestShopPerms(Player player, Sign sign) {
+    private boolean chekForChestShopPerms(Player player, Sign sign) {
 
-        return uSign.canAccess(player, sign);
+        return ChestShopSign.canAccess(player, sign);
 
     }
-*/
+
     public boolean checkForSelectionRights(Player player, Block block) {
 
         Location location = block.getLocation();
@@ -273,8 +273,8 @@ public class SelectionHandler {
         boolean wgPerm = false, residencePerm = false,
                 regiosPerm = false, lwcPerm = false, chestShopPerm = false;
 
-  //      if (wg == null && !residence && regiosAPI == null && lwc == null && !chestShop) {
-        if (wg == null && !residence && lwc == null ) {
+        if (wg == null && !residence && regiosAPI == null && lwc == null && !chestShop) {
+
             return plugin.hasPermissions(player, Permission.USE);
 
         }
@@ -319,7 +319,7 @@ public class SelectionHandler {
 
             }
         }
-        /*
+        
         if (regiosAPI != null) {
 
             if (plugin.hasPermissions(player, Permission.RE_CAN_BUILD_FP)
@@ -334,7 +334,7 @@ public class SelectionHandler {
 
             }
         }
-		*/
+		
         if (lwc != null) {
 
             if (plugin.hasPermissions(player, Permission.LWC_CAN_ACCESS_FP)
@@ -349,7 +349,7 @@ public class SelectionHandler {
 
             }
         }
-        /*
+        
         if (chestShop) {
 
             if (QSUtil.checkForSign(block)) {
@@ -362,7 +362,7 @@ public class SelectionHandler {
                 }
             }
         }
-		*/
+		
         return wgPerm && residencePerm && regiosPerm && lwcPerm && chestShopPerm;
 
     }

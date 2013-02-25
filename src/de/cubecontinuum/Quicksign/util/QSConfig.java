@@ -30,11 +30,11 @@ public class QSConfig {
     //
     private boolean useWG;
     private boolean useRes;
-//    private boolean useRegios;
+    private boolean useRegios;
     private boolean useLogBlock;
     private boolean useSpout;
     private boolean useLWC;
-//    private boolean useChestShop;
+    private boolean useChestShop;
     //
     private String selectionMethodString;
 
@@ -119,11 +119,11 @@ public class QSConfig {
         if (!keys.contains("useResidence")) {
             config.set("useResidence", false);
         }
-/*
+
         if (!keys.contains("useRegios")) {
             config.set("useRegios", false);
         }
-  */      
+       
         if (!keys.contains("useLWC")) {
             config.set("useLWC", false);
         }
@@ -131,11 +131,11 @@ public class QSConfig {
         if (!keys.contains("useLogBock")) {
             config.set("useLogBock", true);
         }
-        /*        
+                
         if (!keys.contains("useChestShop")) {
             config.set("useChestShop", true);
         }
-*/
+
         if (!keys.contains("useSpout")) {
             config.set("useSpout", true);
         }
@@ -170,10 +170,10 @@ public class QSConfig {
         maxReach = config.getInt("maxReach", 100);
         useWG = config.getBoolean("useWorldGuard", true);
         useRes = config.getBoolean("useResidence", false);
-//        useRegios = config.getBoolean("useRegios", false);
+        useRegios = config.getBoolean("useRegios", false);
         useLWC = config.getBoolean("useLWC", false);
         useLogBlock = config.getBoolean("useLogBock", true);
-//        useChestShop = config.getBoolean("useChestShop", true);
+        useChestShop = config.getBoolean("useChestShop", true);
         useSpout = config.getBoolean("useSpout", true);
         colorSignChange = config.getBoolean("colorOnPlacement", true);
         colorDyes = config.getBoolean("colorWithDyes", false);
@@ -188,11 +188,11 @@ public class QSConfig {
         maxReach = 100;
         useWG = true;
         useRes = true;
-//        useRegios = true;
+        useRegios = true;
         useLWC = false;
         useLogBlock = true;
         useSpout = true;
-//        useChestShop = true;
+        useChestShop = true;
         colorSignChange = true;
         colorDyes = false;
         chatSigns = true;
@@ -251,14 +251,14 @@ public class QSConfig {
             QuickSign.log.info("[QuickSignReloaded] Residence support disabled by config.");
 
         }
-/*
+
         if (!useRegios) {
 
             plugin.getSelectionHandler().setRegiosAPI(null);
             QuickSign.log.info("[QuickSignReloaded] Regios support disabled by config.");
 
         }
-        */
+        
         if (!useLWC) {
 
             plugin.getSelectionHandler().setLWC(null);
@@ -272,14 +272,14 @@ public class QSConfig {
             QuickSign.log.info("[QuickSignReloaded] LogBlock support disabled by config.");
 
         }
-        /*
+        
         if (!useChestShop) {
 
             plugin.getSelectionHandler().setChestShop(false);
             QuickSign.log.info("[QuickSignReloaded] ChestShop support disabled by config.");
 
         }
-        */
+        
         if (!useSpout) {
 
             plugin.setSpoutOn(false);

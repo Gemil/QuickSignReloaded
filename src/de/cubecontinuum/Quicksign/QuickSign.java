@@ -2,7 +2,7 @@ package de.cubecontinuum.Quicksign;
 
 import com.griefcraft.lwc.LWCPlugin;
 import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
-//import couk.Adamki11s.Regios.API.RegiosAPI;
+import net.jzx7.regiosapi.RegiosAPI;
 import de.diddiz.LogBlock.Consumer;
 import de.diddiz.LogBlock.LogBlock;
 import java.io.IOException;
@@ -69,8 +69,8 @@ public class QuickSign extends JavaPlugin {
 
         checkForWorldGuard();
         checkForResidence();
-     //   checkForChestShop();
-     //   checkForRegios();
+        checkForChestShop();
+        checkForRegios();
         checkForLogBlock();
         checkForLWC();
 
@@ -343,7 +343,7 @@ public class QuickSign extends JavaPlugin {
 
         }
     }
-/*
+
     private void checkForChestShop() {
 
         PluginManager pm = getServer().getPluginManager();
@@ -369,7 +369,7 @@ public class QuickSign extends JavaPlugin {
         if (plugin != null) {
 
             log.info("[QuickSignReloaded] Regios detected. Features enabled.");
-            selectionHandler.setRegiosAPI(new RegiosAPI());
+            selectionHandler.setRegiosAPI((RegiosAPI) plugin);
 
         } else {
 
@@ -377,7 +377,7 @@ public class QuickSign extends JavaPlugin {
 
         }
     }
-*/
+
     private void checkForLWC() {
 
         PluginManager pm = getServer().getPluginManager();
