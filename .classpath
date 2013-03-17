@@ -2,11 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="ressources/bukkit-1.4.7-R1.1-20130214.060113-6.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="http://jd.bukkit.org/apidocs/"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="ressources/LWC.jar"/>
 	<classpathentry kind="lib" path="ressources/SpoutPlugin.jar">
 		<attributes>
@@ -19,5 +14,10 @@
 	<classpathentry kind="lib" path="ressources/ChestShop.jar"/>
 	<classpathentry kind="lib" path="ressources/Residence.jar"/>
 	<classpathentry kind="lib" path="ressources/LogBlock.jar"/>
+	<classpathentry kind="lib" path="ressources/bukkit-1.5-R0.1-20130315.192811-2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://jd.bukkit.org/apidocs/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
