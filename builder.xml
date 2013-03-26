@@ -16,7 +16,7 @@
           target: default              
          ================================= -->
     <target name="makejar" description="Make a Jar File">
-        <jar destfile="C:/Users/Gemil/Dropbox/Öffentlich/bukkit/QuickSignReloaded.jar">
+        <jar destfile="C:/Users/Gerrit Paepcke/Dropbox/Öffentlich/bukkit/QuickSignReloaded.jar">
         	<fileset dir="bin" />
         </jar>
     </target>
