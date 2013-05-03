@@ -1,6 +1,6 @@
 name: QuickSignReloaded
 main: de.cubecontinuum.Quicksign.QuickSign
-version: 0.0.2
+version: 0.0.3
 commands:
    qs:
       description: Toggles QuickSign.
