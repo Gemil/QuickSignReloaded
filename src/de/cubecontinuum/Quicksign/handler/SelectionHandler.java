@@ -275,13 +275,13 @@ public class SelectionHandler {
 
         if (wg == null && !residence && regiosAPI == null && lwc == null && !chestShop) {
 
-            return plugin.hasPermissions(player, Permission.USE);
+        	return plugin.hasPermissions(player, Permission.USE);
 
         }
 
         if (plugin.hasPermissions(player, Permission.FREE_USE)) {
 
-            return true;
+        	return true;
 
         }
 
@@ -300,10 +300,15 @@ public class SelectionHandler {
             } else if (plugin.hasPermissions(player, Permission.WG_CAN_BUILD)
                     && checkForWGBuildPermissions(player, location, world)) {
 
-                wgPerm = true;
+            	wgPerm = true;
 
             }
-        }
+        } else {
+        	
+            wgPerm = true;
+            
+         }
+        	
 
         if (residence) {
 
@@ -318,7 +323,11 @@ public class SelectionHandler {
                 residencePerm = true;
 
             }
-        }
+        } else {
+        	
+        	residencePerm = true;
+            
+         }
         
         if (regiosAPI != null) {
 
@@ -333,7 +342,11 @@ public class SelectionHandler {
                 regiosPerm = true;
 
             }
-        }
+        } else {
+        	
+        	regiosPerm = true;
+            
+         }
 		
         if (lwc != null) {
 
@@ -348,7 +361,11 @@ public class SelectionHandler {
                 lwcPerm = true;
 
             }
-        }
+        } else {
+        	
+        	lwcPerm = true;
+            
+         }
         
         if (chestShop) {
 
@@ -361,8 +378,12 @@ public class SelectionHandler {
 
                 }
             }
-        }
-		
+        } else {
+        	
+        	chestShopPerm = true;
+            
+         }
+        
         return wgPerm && residencePerm && regiosPerm && lwcPerm && chestShopPerm;
 
     }
