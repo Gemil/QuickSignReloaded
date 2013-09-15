@@ -6,8 +6,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 import de.cubecontinuum.Quicksign.QuickSign;
 import de.cubecontinuum.Quicksign.permission.Permission;
+
 import org.bukkit.block.Sign;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -69,6 +71,16 @@ public class BlackList {
                 
             }
         }
+        
+        if (!plugin.hasPermissions(player,
+                Permission.SEL_BRACKETS_SIGN)) {
+
+            if (checkForBRACKETS(line)) {
+            	
+                return false;
+                
+            }
+        }
 
         if (!plugin.hasPermissions(player,
                 Permission.ALLOW_ICS)) {
@@ -93,6 +105,19 @@ public class BlackList {
 
                 if (blackList.contains(line.toLowerCase())) {
                     
+                    return false;
+                    
+                }
+            }
+        }
+        
+        if (!plugin.hasPermissions(player,
+                Permission.SEL_BRACKETS_SIGN)) {
+
+            for (String line : lines) {
+
+            	if (checkForBRACKETS(line)) {
+                	
                     return false;
                     
                 }
@@ -129,6 +154,21 @@ public class BlackList {
             if (txt.substring(0, 3).equalsIgnoreCase("[MC")
                     && QSUtil.isParsableToInt(txt.substring(3, 7))
                     && txt.charAt(7) == ']') {
+
+                return true;
+
+            }
+        }
+
+        return false;
+
+    }
+    
+    private boolean checkForBRACKETS(String txt) {
+        //[]
+        if (txt.length() >= 2) {
+
+            if (txt.charAt(0) == '[' && txt.charAt(txt.length()-1) == ']') {
 
                 return true;
 
