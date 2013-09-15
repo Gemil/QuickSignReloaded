@@ -1,6 +1,6 @@
 name: QuickSignReloaded
 main: de.cubecontinuum.Quicksign.QuickSign
-version: 0.0.3
+version: 0.0.4
 commands:
    qs:
       description: Toggles QuickSign.
@@ -62,5 +62,9 @@ permissions:
     description: Allows to place console command signs
   quicksign.usespout:
     description: Allows to use Spout GUI
+  quicksign.ignoreblacklist:
+    description: Bypass Black_list.yml
+  quicksign.selbracketssign:
+    description: Allows to select signs that contains square brackets
   quicksign.editchestshopsigns:
     description: Allows to edit signs that are designated ChestShop signs (dangerous)
